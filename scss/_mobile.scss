@@ -1,8 +1,14 @@
 // Widescreens
 @include mediaXL {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 // Desktops & Laptops
 @include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 // Tablets & Small Laptops
 @include mediaMd {
@@ -35,7 +41,7 @@
     transform: translate3d(100%, 0, 0);
 
     .portrait {
-      background: url(../images/portrait_small.jpg);
+      background: url('../img/portrait/portrait-small.jpg');
       width: 150px;
       height: 150px;
     }
@@ -45,9 +51,24 @@
     grid-template-areas:
       'bioimage'
       'bio'
-      'projet1'
-      'projet2'
-      'projet3';
+      'competences'
+      'notions'
+      'perspectives';
+
+    grid-template-columns: 1fr;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .modal {
+    overflow: auto;
+  }
+  .modal-content {
+    grid-template-areas:
+      'title'
+      'title'
+      'intro'
+      'description';
 
     grid-template-columns: 1fr;
   }
@@ -56,5 +77,20 @@
 @include mediaSm {
   main#home h1 {
     margin-top: 10vh;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .modal {
+    overflow: auto;
+  }
+  .modal-content {
+    grid-template-areas:
+      'title'
+      'title'
+      'intro'
+      'description';
+
+    grid-template-columns: 1fr;
   }
 }

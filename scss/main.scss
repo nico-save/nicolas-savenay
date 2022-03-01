@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'detail';
 
 * {
   box-sizing: border-box;
@@ -39,6 +40,21 @@ a {
     color: $secondary-color;
   }
 }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: $secondary-color;
+}
+
 header {
   position: fixed;
   z-index: 2;
@@ -80,7 +96,7 @@ main {
   gap: 30px;
   grid-template-areas:
     'bioimage bio bio'
-    'projet1 projet2 projet3';
+    'competences notions perspectives';
 
   grid-template-columns: repeat(3, 1fr);
 }
@@ -96,20 +112,87 @@ main {
   grid-area: bio;
   font-size: 1.5rem;
 }
-.projet1 {
-  grid-area: projet1;
+.competences {
+  grid-area: competences;
 }
-.projet2 {
-  grid-area: projet2;
+.notions {
+  grid-area: notions;
 }
-.projet3 {
-  grid-area: projet3;
+.perspectives {
+  grid-area: perspectives;
 }
 
-.projet {
-  background: lighten($primary-color, 5);
+.rubriques {
+  background: lighten($primary-color, 10);
   padding: 0.5rem;
   border-bottom: $secondary-color 5px solid;
+  text-align: center;
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+// Button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
 }
 
 #main-footer {
