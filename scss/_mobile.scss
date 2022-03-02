@@ -84,6 +84,13 @@
   .modal {
     overflow: auto;
   }
+
+  .bio {
+    font-size: 1rem;
+  }
+  .boxes div {
+    font-size: 1rem;
+  }
   .modal-content {
     grid-template-areas:
       'title'
@@ -91,6 +98,10 @@
       'intro'
       'description';
 
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .modal {
     grid-template-columns: 1fr;
   }
 }
