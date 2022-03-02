@@ -187,20 +187,22 @@ body {
       background: rgba(0, 0, 0, 0.5); }
 
 h1,
-h2,
-h3 {
+h2 {
   margin: 0;
   font-weight: 400; }
   h1.lg-heading,
-  h2.lg-heading,
-  h3.lg-heading {
-    font-size: 6rem; }
+  h2.lg-heading {
+    font-size: 400%; }
   h1.sm-heading,
-  h2.sm-heading,
-  h3.sm-heading {
+  h2.sm-heading {
+    font-size: 200%;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(5, 5, 5, 0.5); }
+
+h3 {
+  margin: 0;
+  font-weight: 400; }
 
 a {
   color: #fff;
@@ -376,13 +378,20 @@ main {
     grid-template-areas: 'title' 'title' 'intro' 'description';
     grid-template-columns: 1fr; } }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh; }
   .projects {
     grid-template-columns: 1fr; }
   .modal {
     overflow: auto; }
+  .bio {
+    font-size: 1rem; }
+  .boxes div {
+    font-size: 1rem; }
   .modal-content {
     grid-template-areas: 'title' 'title' 'intro' 'description';
+    grid-template-columns: 1fr;
+    width: 100%; }
+  .modal {
     grid-template-columns: 1fr; } }
