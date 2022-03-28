@@ -5,6 +5,9 @@ const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 
+const intro = document.querySelector('.home');
+console.log(intro);
+
 const detailsAfpaBtn = document.querySelector('.detail-afpa-btn');
 const detailsProshopBtn = document.querySelector('.detail-proshop-btn');
 const detailsNatoursBtn = document.querySelector('.detail-natours-btn');
@@ -29,6 +32,7 @@ const toggleMenu = () => {
     menuNav.classList.add('show');
     menuBranding.classList.add('show');
     navItems.forEach((item) => item.classList.add('show'));
+    intro && intro.classList.add('hide');
 
     // Set Menu State
     showMenu = true;
@@ -38,6 +42,7 @@ const toggleMenu = () => {
     menuNav.classList.remove('show');
     menuBranding.classList.remove('show');
     navItems.forEach((item) => item.classList.remove('show'));
+    intro && intro.classList.remove('hide');
 
     // Set Menu State
     showMenu = false;
@@ -63,9 +68,11 @@ const closeModal = () => {
 
 menuBtn.addEventListener('click', toggleMenu);
 
-detailsAfpaBtn.addEventListener('click', toggleDetailAfpa);
-detailsProshopBtn.addEventListener('click', toggleDetailProshop);
-detailsNatoursBtn.addEventListener('click', toggleDetailNatours);
+detailsAfpaBtn && detailsAfpaBtn.addEventListener('click', toggleDetailAfpa);
+detailsProshopBtn &&
+  detailsProshopBtn.addEventListener('click', toggleDetailProshop);
+detailsNatoursBtn &&
+  detailsNatoursBtn.addEventListener('click', toggleDetailNatours);
 closeBtns.forEach((btn) => btn.addEventListener('click', closeModal));
 window.onclick = (event) => {
   modalsScreen.forEach((modal) => {
