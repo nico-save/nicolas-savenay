@@ -14,6 +14,43 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+
+  overflow: hidden;
+}
+
+// body {
+//   width: 100vw;
+//   height: 100vh;
+//   margin: 0;
+//   background: black;
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -99;
+}
+.home {
+  max-width: 50%;
+  margin: auto;
+  margin-top: 15%;
+  padding: 35px;
+  border-radius: 15px;
+  color: white;
+  background: rgba(8, 8, 8, 0.7);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+
+  @include easeOut;
+  &.hide {
+    visibility: hidden;
+
+    @include easeOut;
+  }
 }
 
 // Headings
@@ -60,7 +97,7 @@ hr {
 }
 
 header {
-  position: fixed;
+  position: top;
   z-index: 2;
   width: 100%;
 }
